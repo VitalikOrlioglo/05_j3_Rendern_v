@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<h:head></h:head>
+
+	<h:body>
+		<h:form>
+			<h:selectOneMenu value="#{renderBean.state}" onchange="submit()">
+				<f:selectItem itemLabel="View 1" itemValue="1" />
+				<f:selectItem itemLabel="View 2" itemValue="2" />
+			</h:selectOneMenu>
+		</h:form>
+		
+		<h:panelGroup rendered="#{renderBean.state==1}">
+			<h1>View 1</h1>
+			<h:outputText value="11111111111111111111111111111"/>
+		</h:panelGroup>
+		
+		<h:panelGroup rendered="#{renderBean.state==2}">
+			<h1>View 2</h1>
+			<h:outputText value="2222222222222222222222222222"/>
+		</h:panelGroup>
+	
+	</h:body>
+</html>
